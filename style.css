@@ -36,7 +36,8 @@ h1 {
 
 .button {
   padding: 1rem 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-family: 'Press Start 2P', cursive;
   background-color: var(--accent-color);
   color: #000;
   border: none;
