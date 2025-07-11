@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confetti" id="confetti"></div>
+
+  <div class="graphic">
+    <img src="assets/grad_cap.png" alt="Graduation Graphic" />
+  </div>
+
+  <h1>You are the kind of person poems try to describe.</h1>
+  <button class="button" onclick="showContent()">VIEW GIFT</button>
+
+  <div class="content" id="content">
+    <p>You’ve got a presence like punctuation—small, deliberate, and somehow the whole sentence hinges on you.</p>
+    <p>This isn’t about saying big things. It’s just something small to say: I noticed. You mattered. Enough to make this.</p>
+    <p class="caption">— from someone who carves little things when words don’t stretch far enough</p>
+
+    <a href="https://open.spotify.com/track/4cktbXiXOapiLBMprHFErI?si=c087d6d9ad3949d6" target="_blank" class="pixel-button icon-button"></a>
+
+    <div class="list">
+      <div>- [✓] laughed like it cracked glass</div>
+      <div>- [✓] wore hope like it was just fabric</div>
+      <div>- [✓] didn’t notice she made things easier</div>
+    </div>
+
+    <div class="hidden-note" onclick="toggleEasterEgg()">not for you</div>
+    <div class="easter-egg" id="easterEgg">
+      This space isn't about a response. It's about the kind of person who makes you want to build something.
+    </div>
+  </div>
+
+  <script>
+    function showContent() {
+      document.querySelector('h1').style.display = 'none';
+      document.querySelector('.button').style.display = 'none';
+      document.getElementById('content').style.display = 'flex';
+    }
+
+    function toggleEasterEgg() {
+      const egg = document.getElementById('easterEgg');
+      egg.style.display = egg.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Confetti Generator
+    const colors = ['#ffcc00', '#ff6b6b', '#48dbfb', '#feca57'];
+    for (let i = 0; i < 120; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.top = Math.random() * -100 + 'vh';
+      dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.animationDuration = (2 + Math.random() * 3) + 's';
+      document.getElementById('confetti').appendChild(dot);
+    }
+  </script>
+</body>
+</html>
