@@ -138,6 +138,13 @@ h1 {
   transition: transform 0.1s ease;
 }
 
+.floating-music-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
 .icon-button:hover {
   transform: translateY(-2px);
 }
